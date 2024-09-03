@@ -1,0 +1,108 @@
+.container .title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem 0 1rem;
+  }
+  
+  .title .query-text {
+    color: #FFC300;
+  }
+  
+  .movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .movies-container div {
+    color: #fff;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: space-between;
+    background-color: #001D3D;
+    padding: 1rem;
+    opacity: 0.7;
+    transition: 0.6s;
+  }
+
+  .movies-container div:hover{
+    opacity: 2;
+    cursor: pointer;
+    transform: translateY(-20px);
+}
+  
+  .movies-container div img {
+    max-width: 100%;
+  }
+  
+  .movies-container div img,
+  .movies-container div h2,
+  .movies-container div p {
+    margin-bottom: 1rem;
+  }
+  
+  .movies-container div svg {
+    color: #FFC300;
+  }
+  
+  .movies-container div a {
+    background-color: #FFC300;
+    border: 2px solid #FFC300;
+    border-radius: 4px;
+    color: #001D3D;
+    padding: 1rem 0.5rem;
+    align-items: center;
+    transition: 0.4s;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .movies-container div a:hover {
+    background-color: transparent;
+    color: #FFC300;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  .categories-list {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .category-button {
+    background-color: #001D3D;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-button:hover {
+    background-color: #FFC300;
+    color: #000;
+  }
+  
+  .movies-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
