@@ -12,6 +12,7 @@ const apiKey = import.meta.env.VITE_API_KEY;
 //FUNÇÃO QUE VAI MOSTRAR OS TOPS FILMES NA HOME
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
+  const [category, setCategory] = useState("popular");
 
   const categories = [
     { name: "Populares", path: "popular" },
@@ -32,10 +33,10 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const topRatedUrl = `${moviesUrl}top_rated?${apiKey}`;
+    const topRatedUrl = `${moviesUrl}${category}?${apiKey}`;
 
     getTopRatedMovies(topRatedUrl);
-  }, []);
+  }, [category]);
 
   return (
     <div className="container">
@@ -43,14 +44,14 @@ const Home = () => {
         <h1>Filtrar por categorias: </h1>
         <div className="categories-list">
           {categories.map((category) => (
-            <Link
+            <button
               key={category.path}
               to={`/category/${category.path}`}
               className="category-button"
-              onClick={() => handleCategoryClick(category.path)}
+              onClick={() => setCategory(category.path)}
             >
-              {category.name} 
-            </Link>
+              {category.name}
+            </button>
           ))}
         </div>
       </div>

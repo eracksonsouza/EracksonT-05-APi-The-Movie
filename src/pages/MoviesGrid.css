@@ -106,3 +106,13 @@
     gap: 1rem;
     justify-content: center;
   }
+
+  button{
+    border: none;
+    padding: 2rem;
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: transparent;
+  }
