@@ -13,13 +13,18 @@ const apiKey = import.meta.env.VITE_API_KEY;
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
 
-  const categories = ["Top Movies", "Action", "Comedy", "Drama"];
+  const categories = [
+    { name: "Populares", path: "popular" },
+    { name: "Melhor Avaliados", path: "top_rated" },
+    { name: "Lançamentos Recentes", path: "now_playing" },
+  ];
 
   const getTopRatedMovies = async (url) => {
     try {
       const response = await axios.get(url);
-      const topMovies = await response.data.results;
-      console.log(topMovies);
+      const topMovies = response.data.results;
+      console.log("topMovies", topMovies);
+
       setTopMovies(topMovies);
     } catch (error) {
       console.error("Erro ao buscar filmes: ", error);
@@ -38,8 +43,13 @@ const Home = () => {
         <h1>Filtrar por categorias: </h1>
         <div className="categories-list">
           {categories.map((category) => (
-            <Link key={category} to={`/category/${category.toLowerCase()}`} className="category-button">
-              {category}
+            <Link
+              key={category.path}
+              to={`/category/${category.path}`}
+              className="category-button"
+              onClick={() => handleCategoryClick(category.path)}
+            >
+              {category.name} 
             </Link>
           ))}
         </div>
